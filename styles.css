@@ -20,7 +20,7 @@ button {
 h2.generic-header {
     text-align: center;
     color: #249590;
-    font-size: 300%;
+    font-size: 200%;
 }
 
 .booltip {
@@ -105,7 +105,7 @@ h2.generic-header {
 .resume-text {
     /* This will ensure the text is aligned at the top next to the image */
     margin: 15px;
-    font-size:x-large;
+    font-size:large;
     text-align: center;
     flex-direction: column;
     justify-content: center;
@@ -115,7 +115,7 @@ h2.generic-header {
     /* This will ensure the text is aligned at the top next to the image */
     margin: 0px;
     padding-bottom: 25px;
-    font-size: xx-large;
+    font-size: x-large;
     text-align: center;
     flex-direction: column;
     justify-content: center;
@@ -147,7 +147,7 @@ h2.generic-header {
 }
 
 .resume-text hr {
-    width: 85%;
+    width: 60vw;
     margin-bottom: 15px;
 }
 
@@ -170,7 +170,7 @@ h2.generic-header {
 
 .project-image {
     margin-top: 15px;
-    max-width: 100%;
+    max-width: 10vw;
 }
 
 .project-text {
@@ -182,7 +182,7 @@ h2.generic-header {
     margin-top: 15px;
     margin-left: auto; /* Center align */
     margin-right: auto; /* Center align */
-    max-width: 1800px; /* Maximum width */
+    max-width: 80vw; /* Maximum width */
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -230,7 +230,7 @@ h2.generic-header {
     padding: 10px;
     border-radius: 15px;
     background-color: white;
-    max-width: 90%;
+    max-width: 80vw;
     margin-bottom: 30px;
 }
 
@@ -268,7 +268,6 @@ h2.generic-header {
     text-decoration: none;
     color: #dadada;
 }
-
 
 
 .meglimpse {
