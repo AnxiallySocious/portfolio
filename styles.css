@@ -1,4 +1,6 @@
 #body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
     background-color: rgb(21, 123, 156);
 }
 
@@ -13,6 +15,56 @@ button {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+}
+
+h2.generic-header {
+    text-align: center;
+    color: #249590;
+    font-size: 300%;
+}
+
+.booltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .booltip .tooltiptext {
+    font-size: medium;
+    visibility: hidden;
+    width: 140px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 120%;
+    left: 50%;
+    margin-left: -75px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .booltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  .booltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+
+.link {
+    color:blue;
+    text-decoration: underline;
 }
 
 #me {
@@ -36,6 +88,7 @@ button {
     display: block;
     flex-direction: column;
     justify-content: flex-start;
+    font-size: x-large;
 }
 
 .resume-container {
@@ -43,11 +96,54 @@ button {
     align-items: flex-start; /* Aligns items to the start of the container */
 }
 
+
+.contact-container {
+    padding: 15px;
+    align-items: flex-start; /* Aligns items to the start of the container */
+}
+
 .resume-text {
     /* This will ensure the text is aligned at the top next to the image */
     margin: 15px;
+    font-size:x-large;
+    text-align: center;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
+}
+
+.contact-me {
+    /* This will ensure the text is aligned at the top next to the image */
+    margin: 0px;
+    padding-bottom: 25px;
+    font-size: xx-large;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.other-interests {
+    /* This will ensure the text is aligned at the top next to the image */
+    padding-top: 15px;
+    font-size: 140%;
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+}
+
+
+
+.resume-text ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+}
+
+.resume-text ul li::before {
+    content: "•"; /* Add custom bullets */
+    color: #2f72c0; /* Match the bullet color with the headings */
+    font-weight: bold; /* Make the bullets bold */
+    display: inline-block; 
+    width: 1em; /* Ensure the bullets align with the text */
+    margin-left: -1em; /* Position bullets correctly */
 }
 
 .resume-text hr {
@@ -55,12 +151,49 @@ button {
     margin-bottom: 15px;
 }
 
+.resume-text h1 {
+    color: #249590; /* Green color for headings */
+}
+
+.resume-text h2 {
+    color: #2f72c0; /* Blue color for headings */
+}
+
+.aboutName {
+    color: black;
+    font-weight: 500;
+}
+
+.resume-text p, .resume-text li {
+    color: #555; /* Slightly darker text color for better readability */
+}
+
+.project-image {
+    margin-top: 15px;
+    max-width: 100%;
+}
+
+.project-text {
+    padding: 0px;
+    font-size: xx-large;
+}
+
 #main {
     margin-top: 15px;
-    margin-left: 15px;
-    margin-right: 15px;    
+    margin-left: auto; /* Center align */
+    margin-right: auto; /* Center align */
+    max-width: 1800px; /* Maximum width */
     background-color: white;
     border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 800px) {
+    .resume-main {
+        max-width: 800px;
+        margin: 15px auto;
+        padding: 20px;
+    }/* CSS that should be displayed if width is equal to or less than 800px goes here */
 }
 
 .row {
@@ -72,19 +205,93 @@ button {
 }
 
 #page-container {
-    position: relative;
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
+    margin: 0;
+    padding-bottom: 2.5rem;    /* Footer height */
+    flex: 1;
 }
 
-#content-wrap {
-    padding-bottom: 2.5rem;    /* Footer height */
+.page-wrap {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
+.solved-game-content {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.code-wrapper {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: white;
+    max-width: 90%;
+    margin-bottom: 30px;
+}
+
+.me-wrapper {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: white;
+    max-width: 90%;
+    margin-bottom: 30px;
+}
+
+.codeglimpse {
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.welcome-message {
+    color: white;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20vh;
+    font-size: 15vw;
+    text-align: center;
+    text-decoration: none;
+}
+
+.welcome-message:hover {
+    text-decoration: none;
+    color: #dadada;
+}
+
+
+
+.meglimpse {
+    display: block;
+    max-width: 100%;
+    max-height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.page-wrap:after{
+    content: "";
+    display: block;
 }
 
 footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 2.5rem;            /* Footer height */
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 100vh;
+    margin-top: -2.5rem; /* Negative margin equal to the footer's height */
+    height: 2.5rem; /* Adjust if your footer height is different */
+    background-color: rgb(255, 255, 255);
 }
 
 /* Solid border */

@@ -4,11 +4,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My Website</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
     <link rel="stylesheet" href="./styles.css">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
 <body id="body">
+  <div id="page-container">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="index.html"><img src="badger.jpg" width="50px"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,10 +30,10 @@
                 Projects
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Solved Games</a>
-                <a class="dropdown-item" href="#">Riot API</a>
+                <a class="dropdown-item" href="solvedgames.html">Solved Games</a>
+                <a class="dropdown-item" href="riotapi.html">Riot API</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Philosophy</a>
+                <a class="dropdown-item" href="epistemology.html">Epistemology</a>
               </div>
             </li>
             <li class="nav-item">
@@ -52,16 +54,56 @@
           </form>
         </div>
     </nav>
-
+ 
     <div id="main">
-      <div class="resume-container">
-        <div class="resume-text">
-          <p>Number: 206-539-9529</p>
-          <p>Email: evan.a.burkholder@gmail.com</p>
-        </div>
+      <div class="contact-container">
+        <h2 class="generic-header">Reach out!</h2>
+        <hr>
+        <p class="contact-me">
+          Number:
+          <span class="booltip">
+            <span class="tooltiptext">Copy to clipboard</span>
+            <span class="link videotabsbutton w-button" onclick='copyToClipboard(this)' data-text="206-539-9529" onmouseout="outFunc(this)">
+              206-539-9529</span>
+          </span>
+        </p>
+        <p class="contact-me">Email:
+          <span class="booltip">
+            <span class="tooltiptext">Copy to clipboard</span>
+            <span class="link videotabsbutton w-button" onclick='copyToClipboard(this)' data-text="evan.a.burkholder@gmail.com" onmouseout="outFunc(this)">
+              evan.a.burkholder@gmail.com</span>
+          </span>
+        </p>
       </div>
     </div>
+  </div>  
+  <footer class="text-center text-lg-start">
+    <span class="left-footer">
+      Find me on <a href="https://www.linkedin.com/in/evan-burkholder-806610175/">LinkedIn</a> or <a href="https://profile.indeed.com/?hl=en_US&co=US&from=gnav-menu-homepage">Indeed</a>
+    </span>
+    <span class="right-footer">© 2024 Evan Burkholder. All rights reserved.</span>
+  </footer>
+    <script>
+      function copyToClipboard(element) {
+    // Retrieve the text from data-text attribute
+    var text = element.getAttribute('data-text');
+    navigator.clipboard.writeText(text).then(function() {
+        // On success, find the tooltip within the parent and update its text
+        var tooltip = element.previousElementSibling; // Assuming the tooltip span is immediately before the clickable span
+        tooltip.innerHTML = "Copied!";
+    }, function(err) {
+        console.error('Could not copy text: ', err);
+    });
+    }
+
+    function outFunc(element) {
+        // Reset the tooltip text
+        var tooltip = element.previousElementSibling; // Adjust if the structure changes
+        tooltip.innerHTML = "Copy to clipboard";
+    }
+      </script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
+</html>
